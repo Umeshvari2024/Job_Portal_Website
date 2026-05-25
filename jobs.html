@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body data-page="jobs">
 
 <!-- NAVBAR -->
 <header class="navbar">
@@ -42,34 +42,100 @@
     <div class="grid">
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80">
-            <h3>Backend Developer</h3>
-            <p>Python / Java / Spring Boot</p>
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+            <h3>Frontend Developer</h3>
+            <p>HTML / CSS / JavaScript / React</p>
+            <div class="btn-group">
+                <button class="apply-btn" onclick="openApply('frontend')">Apply</button>
+                <button class="details-btn" onclick="viewDetails('frontend')">Details</button>
+            </div>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
+            <h3>Backend Developer</h3>
+            <p>Java / Spring Boot / Node.js</p>
+            <div class="btn-group">
+                <button class="apply-btn" onclick="openApply('backend')">Apply</button>
+                <button class="details-btn" onclick="viewDetails('backend')">Details</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d">
             <h3>UI/UX Designer</h3>
             <p>Figma / Adobe XD</p>
+            <div class="btn-group">
+                <button class="apply-btn" onclick="openApply('uiux')">Apply</button>
+                <button class="details-btn" onclick="viewDetails('uiux')">Details</button>
+            </div>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80">
-            <h3>Frontend Developer</h3>
-            <p>HTML / CSS / JS / React</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c">
             <h3>Full Stack Developer</h3>
             <p>MERN Stack</p>
+            <div class="btn-group">
+                <button class="apply-btn" onclick="openApply('fullstack')">Apply</button>
+                <button class="details-btn" onclick="viewDetails('fullstack')">Details</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df">
+            <h3>Data Analyst</h3>
+            <p>Excel / SQL / Power BI</p>
+            <div class="btn-group">
+                <button class="apply-btn" onclick="openApply('data')">Apply</button>
+                <button class="details-btn" onclick="viewDetails('data')">Details</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984">
+            <h3>DevOps Engineer</h3>
+            <p>AWS / Docker / CI-CD</p>
+            <div class="btn-group">
+                <button class="apply-btn" onclick="openApply('devops')">Apply</button>
+                <button class="details-btn" onclick="viewDetails('devops')">Details</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692">
+            <h3>Software Engineer</h3>
+            <p>Java / DSA / System Design</p>
+            <div class="btn-group">
+                <button class="apply-btn" onclick="openApply('software')">Apply</button>
+                <button class="details-btn" onclick="viewDetails('software')">Details</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+            <h3>Product Manager</h3>
+            <p>Agile / Roadmap / Strategy</p>
+            <div class="btn-group">
+                <button class="apply-btn" onclick="openApply('product')">Apply</button>
+                <button class="details-btn" onclick="viewDetails('product')">Details</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+            <h3>Cloud Engineer</h3>
+            <p>AWS / Azure / DevOps</p>
+            <div class="btn-group">
+                <button class="apply-btn" onclick="openApply('cloud')">Apply</button>
+                <button class="details-btn" onclick="viewDetails('cloud')">Details</button>
+            </div>
         </div>
 
     </div>
 
 </section>
 
-<!-- FOOTER (HOME PAGE SAME STYLE) -->
+<!-- FOOTER -->
 <footer class="footer">
 
     <div class="footer-grid">
@@ -94,11 +160,21 @@
 
     </div>
 
-    <p class="bottom">© 2026 JobPortal. All Rights Reserved.</p>
-
+    <p class="bottom">© 2026 JobPortal | All Rights Reserved</p>
 </footer>
 
 <script src="js/script.js"></script>
+
+<!-- JOB FUNCTIONS -->
+<script>
+function openApply(job){
+    window.location.href = "apply.html?job=" + job;
+}
+
+function viewDetails(job){
+    window.location.href = "job-details.html?job=" + job;
+}
+</script>
 
 </body>
 </html>

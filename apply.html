@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply - Job Portal</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+/* ===== APPLY HERO BACKGROUND ===== */
+.apply-hero {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80');
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 20px;
+}
+
+.apply-hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.apply-hero p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* FORM CARD CENTER FIX */
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: -60px;
+}
+
+/* FORM CARD */
+.form-card {
+    width: 100%;
+    max-width: 600px;
+    background: var(--card);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">💼 JobPortal</div>
+
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="apply.html" class="active">Apply</a>
+    </nav>
+
+    <button id="themeToggle" class="theme-btn">🌙</button>
+</header>
+
+<!-- HERO WITH BACKGROUND IMAGE -->
+<section class="apply-hero">
+    <div>
+        <h1>Apply for Job</h1>
+        <p>Fill the form and start your career journey</p>
+    </div>
+</section>
+
+<!-- FORM -->
+<section class="form-wrapper">
+
+    <div class="form-card">
+
+        <h2>Job Application Form</h2>
+
+        <button onclick="goBack()" class="apply-btn" style="margin-bottom:15px;">
+            ← Back to Jobs
+        </button>
+
+        <form onsubmit="submitForm(event)">
+
+            <input type="text" placeholder="Full Name" required>
+
+            <input type="email" placeholder="Email Address" required>
+
+            <input type="tel" placeholder="Phone Number" required>
+
+            <input type="text" id="jobField" placeholder="Job Role" readonly>
+
+            <textarea rows="5" placeholder="Why should we hire you?"></textarea>
+
+            <button type="submit" class="apply-btn" style="width:100%;">
+                Submit Application
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-grid">
+
+        <div>
+            <h3>JobPortal</h3>
+            <p>Your career partner for best job opportunities.</p>
+        </div>
+
+        <div>
+            <h4>Quick Links</h4>
+            <p>Home</p>
+            <p>Jobs</p>
+            <p>Apply</p>
+        </div>
+
+        <div>
+            <h4>Contact</h4>
+            <p>Email: support@jobportal.com</p>
+            <p>Phone: +91 9876543210</p>
+        </div>
+
+    </div>
+
+    <p class="bottom">© 2026 JobPortal | All Rights Reserved</p>
+</footer>
+
+<script>
+// BACK BUTTON
+function goBack() {
+    window.location.href = "jobs.html";
+}
+
+// THEME TOGGLE FIX
+const themeToggle = document.getElementById("themeToggle");
+
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+    document.body.setAttribute("data-theme", "dark");
+    themeToggle.innerText = "☀️";
+} else {
+    document.body.removeAttribute("data-theme");
+    themeToggle.innerText = "🌙";
+}
+
+themeToggle.addEventListener("click", () => {
+
+    const currentTheme = document.body.getAttribute("data-theme");
+
+    if (currentTheme === "dark") {
+        document.body.removeAttribute("data-theme");
+        localStorage.setItem("theme", "light");
+        themeToggle.innerText = "🌙";
+    } else {
+        document.body.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+        themeToggle.innerText = "☀️";
+    }
+});
+
+// FORM SUBMIT
+function submitForm(e) {
+    e.preventDefault();
+    alert("🎉 Application Submitted Successfully!");
+    window.location.href = "jobs.html";
+}
+
+// GET JOB FROM URL
+const params = new URLSearchParams(window.location.search);
+const job = params.get("job");
+
+if (job) {
+    document.getElementById("jobField").value = job;
+}
+</script>
+
+</body>
+</html>
