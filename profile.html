@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile - Job Portal</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* HERO */
+.profile-hero {
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1522071820081-009f0129c71c');
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+/* CONTAINER */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-top: -60px;
+}
+
+/* CARD */
+.profile-card {
+    width: 100%;
+    max-width: 1000px;
+    background: var(--card);
+    border-radius: 16px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* IMAGE */
+.profile-img img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+/* NAME */
+.profile-info h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* BADGE */
+.badge {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+/* DESCRIPTION */
+.profile-info p {
+    margin-top: 12px;
+    line-height: 1.6;
+    color: gray;
+}
+
+/* SKILLS */
+.skills {
+    margin-top: 20px;
+}
+
+.skill {
+    display: inline-block;
+    background: #e5e7eb;
+    padding: 6px 12px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+/* SKILL BAR */
+.skill-bar {
+    margin-top: 10px;
+}
+
+.bar {
+    width: 100%;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    background: #2563eb;
+}
+
+/* STATS */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.stat-box {
+    background: #f3f4f6;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* SOCIAL LINKS */
+.socials {
+    margin-top: 20px;
+}
+
+.socials a {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 12px;
+    background: #111827;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.socials a:hover {
+    background: #2563eb;
+}
+
+/* EDIT BUTTON */
+.edit-btn {
+    position: absolute;
+    right: 30px;
+    top: 120px;
+    padding: 10px 16px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    background: #1d4ed8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .profile-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+    <div class="logo">💼 JobPortal</div>
+
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="profile.html" class="active">Profile</a>
+    </nav>
+
+    <button class="theme-btn">🌙</button>
+
+</header>
+
+<!-- HERO -->
+<section class="profile-hero">
+    <div>
+        <h1>My Profile</h1>
+        <p>Professional Job Seeker Dashboard</p>
+    </div>
+</section>
+
+<!-- EDIT BUTTON -->
+<button class="edit-btn">Edit Profile</button>
+
+<!-- PROFILE CARD -->
+<section class="profile-container">
+
+    <div class="profile-card">
+
+        <div class="profile-img">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d">
+        </div>
+
+        <div class="profile-info">
+
+            <h2>John Doe</h2>
+
+            <span class="badge">Full Stack Developer</span>
+
+            <p>
+                Passionate developer skilled in building scalable web applications using React, Node.js and Java Spring Boot.
+            </p>
+
+            <!-- SKILLS -->
+            <h4>Skills</h4>
+
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">React</div>
+            <div class="skill">Node.js</div>
+
+            <!-- SKILL BARS -->
+            <div class="skill-bar">
+                <p>HTML</p>
+                <div class="bar"><div class="fill" style="width: 95%"></div></div>
+            </div>
+
+            <div class="skill-bar">
+                <p>CSS</p>
+                <div class="bar"><div class="fill" style="width: 90%"></div></div>
+            </div>
+
+            <div class="skill-bar">
+                <p>JavaScript</p>
+                <div class="bar"><div class="fill" style="width: 85%"></div></div>
+            </div>
+
+            <!-- SOCIAL -->
+            <div class="socials">
+
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Portfolio</a>
+
+            </div>
+
+            <!-- STATS -->
+            <div class="stats">
+
+                <div class="stat-box">
+                    <h3>12+</h3>
+                    <p>Projects</p>
+                </div>
+
+                <div class="stat-box">
+                    <h3>5+</h3>
+                    <p>Internships</p>
+                </div>
+
+                <div class="stat-box">
+                    <h3>3</h3>
+                    <p>Certifications</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <div>
+            <h3>JobPortal</h3>
+            <p>Your career partner for best opportunities.</p>
+        </div>
+
+        <div>
+            <h4>Quick Links</h4>
+            <p>Home</p>
+            <p>Jobs</p>
+            <p>Profile</p>
+        </div>
+
+        <div>
+            <h4>Contact</h4>
+            <p>Email: support@jobportal.com</p>
+            <p>Phone: +91 9876543210</p>
+        </div>
+
+    </div>
+
+    <p class="bottom">© 2026 JobPortal | All Rights Reserved</p>
+
+</footer>
+
+</body>
+</html>

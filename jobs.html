@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body data-page="jobs">
+<body class="jobs"></body>
 
 <!-- NAVBAR -->
 <header class="navbar">
@@ -19,7 +19,7 @@
     <nav class="nav">
         <a href="index.html">Home</a>
         <a href="jobs.html" class="active">Jobs</a>
-        <a href="apply.html">Apply</a>
+        <a href="profile.html">Profile</a>
     </nav>
 
     <button id="themeToggle" class="theme-btn">🌙</button>
@@ -33,6 +33,16 @@
         <p>Find the best job opportunities and apply instantly</p>
     </div>
 </section>
+
+<!-- SEARCH BAR -->
+<div style="text-align:center; margin:20px;">
+    <input 
+        type="text" 
+        id="searchInput"
+        placeholder="Search jobs..."
+        style="padding:10px; width:300px; border-radius:8px;"
+    >
+</div>
 
 <!-- JOB LIST -->
 <section class="section">
@@ -149,7 +159,7 @@
             <h4>Quick Links</h4>
             <p>Home</p>
             <p>Jobs</p>
-            <p>Apply</p>
+            <p>Profile</p>
         </div>
 
         <div>
@@ -165,7 +175,7 @@
 
 <script src="js/script.js"></script>
 
-<!-- JOB FUNCTIONS -->
+<!-- FUNCTIONS -->
 <script>
 function openApply(job){
     window.location.href = "apply.html?job=" + job;

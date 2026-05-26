@@ -52,3 +52,30 @@ function viewDetails(jobName) {
 function goBack() {
     window.location.href = "jobs.html";
 }
+
+// SEARCH JOBS
+const searchInput = document.getElementById("searchInput");
+
+if(searchInput){
+
+    searchInput.addEventListener("keyup", function(){
+
+        let value = this.value.toLowerCase();
+
+        let cards = document.querySelectorAll(".card");
+
+        cards.forEach(card => {
+
+            let text = card.innerText.toLowerCase();
+
+            if(text.includes(value)){
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    });
+
+}
