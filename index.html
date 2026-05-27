@@ -9,7 +9,20 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
+
 <body class="home">
+
+    <script>
+window.addEventListener("DOMContentLoaded", () => {
+
+    const user = localStorage.getItem("JobPortal_User");
+
+    if (!user) {
+        window.location.href = "login.html";
+    }
+
+});
+</script>
 
     <!-- =========================
          NAVBAR
@@ -24,6 +37,7 @@
             <a href="index.html" class="active">Home</a>
             <a href="jobs.html">Jobs</a>
             <a href="profile.html">Profile</a>
+            <a href="#" id="logoutBtn">Logout</a>
         </nav>
 
         <button class="theme-btn" id="themeToggle">
@@ -235,8 +249,95 @@
 
     </footer>
 
-    <script src="js/script.js"></script>
+    <!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="home">
+
+<!-- ================= LOGIN CHECK ================= -->
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+
+    const user = localStorage.getItem("JobPortal_User");
+
+    if (!user) {
+        window.location.href = "login.html";
+    }
+
+});
+</script>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+
+    <div class="logo">
+        💼 JobPortal
+    </div>
+
+    <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="profile.html">Profile</a>
+        <a href="#" id="logoutBtn">Logout</a>
+    </nav>
+
+    <button class="theme-btn" id="themeToggle">
+        🌙
+    </button>
+
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Find Your Dream Job</h1>
+        <p>Apply for top companies and grow your career with the best opportunities.</p>
+        <a href="jobs.html" class="apply-btn">Browse Jobs</a>
+    </div>
+</section>
+
+<!-- बाकी sections same आहेत (unchanged) -->
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <p>© 2026 JobPortal. All Rights Reserved.</p>
+</footer>
+
+<!-- ================= LOGOUT SCRIPT ================= -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    if (logoutBtn) {
+
+        logoutBtn.addEventListener("click", (e) => {
+
+            e.preventDefault();
+
+            localStorage.removeItem("JobPortal_User");
+
+            window.location.href = "login.html";
+
+        });
+
+    }
+
+});
+</script>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
 </body>
 
 </html>
